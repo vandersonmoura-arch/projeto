@@ -10,9 +10,9 @@ margin:0;
 
 .chat-container{
 background:white;
-width:420px;
-max-width:90%;
-padding:20px;
+width:450px;
+max-width:95%;
+padding:25px;
 border-radius:12px;
 box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
@@ -23,15 +23,14 @@ margin-bottom:15px;
 }
 
 #chat{
-height:350px;
+height:380px;
 overflow-y:auto;
 border:1px solid #ddd;
-padding:10px;
+padding:12px;
 margin-bottom:15px;
-border-radius:8px;
-background:#f9fafb;
+border-radius:10px;
+background:#f8fafc;
 }
-
 /* mensagem usuário */
 
 .user{
@@ -68,6 +67,11 @@ max-width:70%;
 }
 
 /* input */
+
+.input-area{
+display:flex;
+gap:10px;
+}
 
 .input-area{
 display:flex;
