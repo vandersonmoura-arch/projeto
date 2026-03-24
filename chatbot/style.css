@@ -12,9 +12,9 @@ margin:0;
 background:white;
 width:450px;
 max-width:95%;
-padding:25px;
+padding:20px;
 border-radius:12px;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
 .chat-container h2{
@@ -34,13 +34,12 @@ background:#f8fafc;
 /* mensagem usuário */
 
 .user{
-text-align:right;
+align-self:flex-end;
 background:#2563eb;
 color:white;
-padding:8px 12px;
-border-radius:12px;
-margin:6px;
-display:inline-block;
+padding:10px 15px;
+border-radius:15px;
+margin:5px;
 max-width:70%;
 }
 
@@ -61,11 +60,10 @@ border-radius:50%;
 
 .bot{
 background:#e5e7eb;
-padding:8px 12px;
-border-radius:12px;
+padding:10px 15px;
+border-radius:15px;
 max-width:70%;
 }
-
 /* input */
 
 .input-area{
@@ -96,4 +94,24 @@ cursor:pointer;
 
 button:hover{
 background:#1d4ed8;
+}
+.input-area{
+display:flex;
+gap:10px;
+}
+
+.input-area input{
+flex:1;
+padding:10px;
+border-radius:20px;
+border:1px solid #ccc;
+}
+
+.input-area button{
+background:#2563eb;
+border:none;
+color:white;
+padding:10px 15px;
+border-radius:20px;
+cursor:pointer;
 }
