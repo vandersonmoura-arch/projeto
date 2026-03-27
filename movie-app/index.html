@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Finder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero">
+            <div class="hero-copy">
+                <span class="eyebrow">Curated movie search</span>
+                <h1>Movie Finder</h1>
+                <p>
+                    Search the OMDb catalog with a richer cinematic interface, strong typography
+                    and cards built to spotlight posters.
+                </p>
+            </div>
+
+            <div class="hero-stats">
+                <article>
+                    <strong>API</strong>
+                    <span>OMDb search</span>
+                </article>
+                <article>
+                    <strong>Style</strong>
+                    <span>cinema dashboard</span>
+                </article>
+                <article>
+                    <strong>Focus</strong>
+                    <span>fast discovery</span>
+                </article>
+            </div>
+        </header>
+
+        <main class="content-panel">
+            <section class="search-panel" aria-label="Movie search">
+                <div class="search-copy">
+                    <span class="search-label">Explore titles</span>
+                    <h2>Find films worth watching</h2>
+                </div>
+
+                <div class="search-controls">
+                    <label class="sr-only" for="movie-input">Search movie</label>
+                    <input type="text" id="movie-input" placeholder="Search movie title...">
+                    <button type="button" id="search-button">Search</button>
+                </div>
+
+                <p id="status-message" class="status-message" aria-live="polite">
+                    Search for a movie to load live results from the OMDb API.
+                </p>
+            </section>
+
+            <section class="featured-strip" aria-label="Featured mood cards">
+                <article>
+                    <span>Trending</span>
+                    <strong>Epic posters</strong>
+                </article>
+                <article>
+                    <span>Discover</span>
+                    <strong>Fast search flow</strong>
+                </article>
+                <article>
+                    <span>Visual</span>
+                    <strong>Modern card system</strong>
+                </article>
+            </section>
+
+            <section class="movies">
+                <div class="movies-container">
+                    <article class="card">
+                        <img src="https://via.placeholder.com/300x420/111827/f8fafc?text=Poster" alt="Sample movie poster">
+                        <div class="card-content">
+                            <span class="card-tag">Featured</span>
+                            <h3>Movie Title</h3>
+                            <p>2024</p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://via.placeholder.com/300x420/1f2937/f8fafc?text=Poster" alt="Sample movie poster">
+                        <div class="card-content">
+                            <span class="card-tag">Featured</span>
+                            <h3>Another Title</h3>
+                            <p>2023</p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://via.placeholder.com/300x420/0f172a/f8fafc?text=Poster" alt="Sample movie poster">
+                        <div class="card-content">
+                            <span class="card-tag">Featured</span>
+                            <h3>Sample Title</h3>
+                            <p>2022</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

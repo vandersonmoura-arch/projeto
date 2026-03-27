@@ -1,116 +1,221 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Vanderson Alves | Desenvolvedor Frontend</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanderson Alves | Front-end Developer</title>
+    <meta
+        name="description"
+        content="Portfolio de Vanderson Alves com projetos em HTML, CSS e JavaScript."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=General+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <div class="noise-layer" aria-hidden="true"></div>
 
-<header>
-<!-- Cabeçalho da página -->
-</header>
+    <header class="site-header">
+        <a class="brand" href="#top">Vanderson Alves</a>
 
-<main>
+        <nav class="site-nav" aria-label="Navegacao principal">
+            <a href="#sobre">Sobre</a>
+            <a href="#skills">Skills</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
 
-<div class="hero">
+        <a class="header-cta" href="https://wa.me/5519999815263" target="_blank" rel="noreferrer">
+            Fale comigo
+        </a>
+    </header>
 
-<div class="hero-text">
+    <main id="top">
+        <section class="hero">
+            <div class="hero-copy">
+                <span class="eyebrow">Front-end em construcao constante</span>
+                <h1>Interfaces modernas, codigo limpo e projetos que mostram evolucao real.</h1>
+                <p class="hero-text">
+                    Sou Vanderson Alves, desenvolvedor front-end em formacao. Estou construindo
+                    projetos com HTML, CSS e JavaScript para evoluir tecnica, repertorio visual
+                    e experiencia de usuario.
+                </p>
 
-<h1>Olá, eu sou Vanderson Alves!</h1>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#projetos">Ver projetos</a>
+                    <a class="button button-secondary" href="https://wa.me/5519999815263" target="_blank" rel="noreferrer">
+                        Entrar em contato
+                    </a>
+                </div>
 
-<p>Desenvolvedor Frontend em formação</p>
+                <div class="hero-stats">
+                    <article>
+                        <strong>03+</strong>
+                        <span>estudos e interfaces publicadas</span>
+                    </article>
+                    <article>
+                        <strong>UI</strong>
+                        <span>foco em visual, responsividade e clareza</span>
+                    </article>
+                    <article>
+                        <strong>JS</strong>
+                        <span>interacao, DOM e componentes simples</span>
+                    </article>
+                </div>
+            </div>
 
-<h2>Sobre mim</h2>
+            <div class="hero-visual">
+                <div class="portrait-card">
+                    <div class="portrait-glow" aria-hidden="true"></div>
+                    <img src="img/dev.png" alt="Foto de Vanderson Alves">
+                </div>
 
-<p>
-Sou Vanderson Alves, estudante de desenvolvimento Frontend.
-Atualmente estou aprendendo HTML, CSS, JavaScript e React,
-construindo projetos para desenvolver minhas habilidades
-e iniciar minha carreira como desenvolvedor web.
-</p>
+                <div class="floating-card floating-card-top">
+                    <span>Atual foco</span>
+                    <strong>HTML, CSS, JavaScript e React</strong>
+                </div>
 
-<a href="https://wa.me/5519999815263" target="_blank">
-<button>Fale comigo</button>
-</a>
+                <div class="floating-card floating-card-bottom">
+                    <span>Objetivo</span>
+                    <strong>Transformar estudo em portfolio forte</strong>
+                </div>
+            </div>
+        </section>
 
-</div>
+        <section class="section section-about" id="sobre">
+            <div class="section-heading">
+                <span class="section-label">Sobre</span>
+                <h2>Uma base solida em construcao, com atencao a codigo e apresentacao.</h2>
+            </div>
 
+            <div class="about-grid">
+                <article class="panel">
+                    <p>
+                        Meu foco hoje e aprender construindo. Cada projeto e uma oportunidade
+                        para praticar estrutura HTML, refinamento visual em CSS e comportamento
+                        com JavaScript puro.
+                    </p>
+                </article>
 
-<div class="foto-dev">
+                <article class="panel">
+                    <p>
+                        Este site agora funciona como uma vitrine do que voce ja esta
+                        desenvolvendo: layout moderno, boa hierarquia, navegacao clara e
+                        projetos organizados em uma pagina principal.
+                    </p>
+                </article>
+            </div>
+        </section>
 
-<img src="img/dev.png" alt="Foto de Vanderson Alves desenvolvedor web">
-</div>
+        <section class="section" id="skills">
+            <div class="section-heading">
+                <span class="section-label">Skills</span>
+                <h2>Tecnologias e pontos fortes que estao guiando a evolucao do portfolio.</h2>
+            </div>
 
-</div>
+            <div class="skills-grid">
+                <article class="skill-card">
+                    <h3>HTML semantico</h3>
+                    <p>Estrutura clara, seo basico, acessibilidade inicial e melhor leitura do conteudo.</p>
+                </article>
 
+                <article class="skill-card">
+                    <h3>CSS moderno</h3>
+                    <p>Layouts responsivos, gradientes, glassmorphism, tipografia e profundidade visual.</p>
+                </article>
 
-<section class="projetos">
+                <article class="skill-card">
+                    <h3>JavaScript</h3>
+                    <p>Manipulacao de DOM, eventos, busca de dados e experiencias interativas.</p>
+                </article>
 
-<h2>Projetos</h2>
+                <article class="skill-card">
+                    <h3>UI e portfolio</h3>
+                    <p>Apresentacao visual mais forte para transformar projeto de estudo em vitrine profissional.</p>
+                </article>
+            </div>
+        </section>
 
-<div class="projetos-grid">
+        <section class="section" id="projetos">
+            <div class="section-heading">
+                <span class="section-label">Projetos</span>
+                <h2>Projetos em destaque dentro do seu portfolio atual.</h2>
+            </div>
 
-<div class="card">
+            <div class="project-grid">
+                <article class="project-card project-card-featured">
+                    <div class="project-badge">Projeto 01</div>
+                    <h3>Chatbot JavaScript</h3>
+                    <p>
+                        Interface de conversa com visual futurista, sugestoes rapidas e foco em
+                        experiencia de usuario.
+                    </p>
+                    <ul class="project-meta">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                    <a class="project-link" href="chatbot/index.html">Abrir projeto</a>
+                </article>
 
-<h3>Chatbot JavaScript</h3>
+                <article class="project-card">
+                    <div class="project-badge">Projeto 02</div>
+                    <h3>Movie Finder</h3>
+                    <p>
+                        Busca de filmes com OMDb API, cards modernos e uma direcao visual inspirada
+                        em plataformas de entretenimento.
+                    </p>
+                    <ul class="project-meta">
+                        <li>API</li>
+                        <li>JavaScript</li>
+                        <li>UI design</li>
+                    </ul>
+                    <a class="project-link" href="movie-app/index.html">Abrir projeto</a>
+                </article>
 
-<p>Chatbot interativo desenvolvido coom HTLM , CSS e JavaScript.</p>
+                <article class="project-card">
+                    <div class="project-badge">Portfolio</div>
+                    <h3>Pagina principal</h3>
+                    <p>
+                        Landing page responsiva para apresentar sua historia, seus estudos e seus
+                        projetos em uma linguagem visual mais madura.
+                    </p>
+                    <ul class="project-meta">
+                        <li>Portfolio</li>
+                        <li>Responsivo</li>
+                        <li>Visual moderno</li>
+                    </ul>
+                    <a class="project-link" href="#top">Ver secao principal</a>
+                </article>
+            </div>
+        </section>
 
-<a href="chatbot/index.html">
-<button>Ver projeto</button>
-</a>
+        <section class="section contact-section" id="contato">
+            <div class="contact-panel">
+                <div>
+                    <span class="section-label">Contato</span>
+                    <h2>Se quiser, vamos transformar estudo em oportunidade.</h2>
+                    <p>
+                        Disponivel para conversar sobre portfolio, estudos, melhorias visuais
+                        e proximos passos como desenvolvedor front-end.
+                    </p>
+                </div>
 
-</a>
+                <div class="contact-actions">
+                    <a class="button button-primary" href="https://wa.me/5519999815263" target="_blank" rel="noreferrer">
+                        Chamar no WhatsApp
+                    </a>
+                    <a class="button button-secondary" href="#projetos">Explorar projetos</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-</div>
+    <footer class="site-footer">
+        <p>&copy; <span id="current-year">2026</span> Vanderson Alves. Portfolio front-end.</p>
+    </footer>
 
-
-<div class="card">
-
-<h3>Projeto 2</h3>
-
-<p>Aplicação interativa desenvolvida com JavaScript.</p>
-
-<a href="#" target="_blank">
-<button>Ver projeto</button>
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h3>Projeto 3</h3>
-
-<p>Projeto frontend moderno com layout responsivo.</p>
-
-<a href="#" target="_blank">
-<button>Ver projeto</button>
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-</main>
-
-<footer>
-
-<p>© 2026 Vanderson Alves</p>
-
-</footer>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
-
 </html>
