@@ -12,7 +12,7 @@ function createMessageRow(content, type) {
         wrapper.className = "bot-message";
 
         const avatar = document.createElement("img");
-        avatar.src = "img/robot.png";
+        avatar.src = "./img/robot.png";
         avatar.className = "avatar";
         avatar.alt = "Avatar do robo";
 
