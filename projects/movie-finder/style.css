@@ -9,7 +9,7 @@ box-sizing:border-box;
 /* BODY */
 
 body{
-background-image:url("./img/movie-grid.png");
+background-image:url("/projects/movie-finder/img/movie-grid.png");
 background-size:cover;
 background-position:center calc(50% - 150px) 120px;
 background-attachment:fixed;
