@@ -72,10 +72,18 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 18px;
+    transition: background 0.2s ease, box-shadow 0.2s ease, backdrop-filter 0.2s ease;
+}
+
+.header-scroll {
+    background: rgba(10, 15, 32, 0.85);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(30px);
 }
 
 .brand,
 .site-nav a,
+.header-github,
 .header-cta,
 .project-link {
     text-decoration: none;
@@ -93,18 +101,26 @@ body {
     gap: 18px;
 }
 
-.site-nav a {
+.site-nav a,
+.header-github {
     color: var(--text-muted);
     transition: color 0.2s ease;
 }
 
 .site-nav a:hover,
+.header-github:hover,
 .project-link:hover {
     color: var(--text-main);
 }
 
 .site-nav a.is-active {
     color: var(--text-main);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .header-cta {
@@ -116,6 +132,7 @@ body {
     background: linear-gradient(135deg, rgba(103, 232, 249, 0.22), rgba(139, 92, 246, 0.22));
     color: var(--text-main);
     border: 1px solid rgba(103, 232, 249, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 main,
@@ -125,12 +142,12 @@ main,
 }
 
 .hero {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 24px;
-    padding: 34px;
-    border-radius: var(--radius-lg);
+   display:grid;
+grid-template-columns:1.3fr 0.7fr;
+align-items:center;
+gap:10px;
 }
+
 
 .hero::before,
 .panel::before,
@@ -162,6 +179,21 @@ main,
     color: #a5f3fc;
 }
 
+.hero-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.hero-stack span {
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    font-size: 0.92rem;
+}
+
 .hero h1,
 .section-heading h2,
 .contact-panel h2 {
@@ -170,11 +202,21 @@ main,
 }
 
 .hero h1 {
-    margin: 18px 0 16px;
+    margin: 8px 0 14px;
     font-size: clamp(2.9rem, 7vw, 5.6rem);
     line-height: 0.96;
-    max-width: 12ch;
+    max-width: 14ch;
 }
+
+.hero-copy{
+display:flex;
+flex-direction:column;
+justify-content:center;
+max-width:620px;
+}
+
+
+
 
 .hero-text {
     max-width: 58ch;
@@ -200,12 +242,12 @@ main,
     border-radius: 18px;
     text-decoration: none;
     font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.2s ease;
 }
 
 .button:hover,
 .header-cta:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 .button-primary {
@@ -218,6 +260,10 @@ main,
     color: var(--text-main);
     border: 1px solid rgba(148, 163, 184, 0.18);
     background: rgba(255, 255, 255, 0.04);
+}
+
+.button:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 
 .hero-stats {
@@ -257,12 +303,9 @@ main,
     line-height: 1.75;
 }
 
-.hero-visual {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 560px;
+.hero-visual{
+display:flex;
+justify-content:center;
 }
 
 .portrait-card {
@@ -277,7 +320,6 @@ main,
 
 .portrait-glow {
     position: absolute;
-    inset: auto;
     bottom: -30px;
     left: 50%;
     width: 220px;
@@ -359,6 +401,12 @@ main,
     padding: 24px;
 }
 
+.panel h3,
+.skill-card h3,
+.project-card h3 {
+    margin-top: 0;
+}
+
 .skills-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -369,7 +417,7 @@ main,
 
 .skill-card h3,
 .project-card h3 {
-    margin: 0 0 10px;
+    margin-bottom: 10px;
     font-size: 1.2rem;
 }
 
@@ -379,6 +427,12 @@ main,
 
 .project-card {
     padding: 24px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
 }
 
 .project-card-featured {
@@ -431,17 +485,28 @@ main,
 .site-nav a:focus,
 .button:focus,
 .header-cta:focus,
+.header-github:focus,
 .project-link:focus {
     outline: 2px solid rgba(103, 232, 249, 0.75);
     outline-offset: 2px;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @media (max-width: 1080px) {
     .hero,
     .project-grid,
     .skills-grid,
-    .about-grid,
-    .contact-panel {
+    .about-grid {
         grid-template-columns: 1fr;
     }
 
@@ -454,6 +519,7 @@ main,
     }
 
     .contact-panel {
+        flex-direction: column;
         align-items: flex-start;
     }
 }
@@ -469,8 +535,14 @@ main,
         flex-wrap: wrap;
     }
 
-    .header-cta {
+    .header-actions {
+        flex-direction: column;
+    }
+
+    .header-cta,
+    .header-github {
         width: 100%;
+        text-align: center;
     }
 
     .hero-stats {
@@ -520,7 +592,7 @@ main,
     }
 
     .button,
-    .header-cta {
+    .contact-actions .button {
         width: 100%;
     }
 }

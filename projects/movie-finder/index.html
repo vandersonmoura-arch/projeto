@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Movie Finder</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./style.css?v=1">
+
+
+
+</head>
+
+<body>
+
+<div class="page-shell">
+
+<header class="hero">
+
+<div class="hero-copy">
+
+<a class="back-link" href="../index.html">← Back to portfolio</a>
+
+<span class="eyebrow">Cinematic search engine</span>
+
+<h1>Movie Finder</h1>
+
+<p>
+Search thousands of movies using the OMDb API with a cinematic interface.
+</p>
+
+</div>
+
+</header>
+
+
+<main class="content-panel">
+
+<section class="search-panel">
+
+<div class="search-controls">
+
+<input
+type="text"
+id="movie-input"
+placeholder="Search movie title..."
+autocomplete="off"
+/>
+
+<button id="search-button">
+Search
+</button>
+
+</div>
+
+<p id="status-message">
+Search a movie to begin
+</p>
+
+</section>
+
+
+<section class="movies">
+
+<div class="movies-container" id="movies-container"></div>
+
+</section>
+
+</main>
+
+</div>
+
+
+<!-- MODAL -->
+
+<div class="modal" id="movie-modal">
+
+<div class="modal-content">
+
+<button class="close-modal" id="close-modal">✕</button>
+
+<div id="modal-body"></div>
+
+</div>
+
+</div>
+
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
