@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chatbot JavaScript</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+rel="stylesheet"
+>
+
+<link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+<div class="page-shell">
+
+<aside class="hero-panel">
+
+<a class="back-link" href="/">Voltar</a>
+
+<span class="eyebrow">Assistente Front-end</span>
+
+<h1>Conversa com visual de app moderno.</h1>
+
+<p>
+Um chatbot com atmosfera futurista, interface em camadas e foco em leitura,
+contraste e microinteracoes.
+</p>
+
+<div class="hero-metrics">
+
+<article>
+<strong>100%</strong>
+<span>HTML, CSS e JS</span>
+</article>
+
+<article>
+<strong>UI</strong>
+<span>glassmorphism</span>
+</article>
+
+<article>
+<strong>UX</strong>
+<span>entrada fluida</span>
+</article>
+
+</div>
+
+</aside>
+
+<main class="chat-container">
+
+<header class="chat-header">
+
+<img src="./img/robot.png" alt="Robô do chatbot">
+<div>
+
+<span class="badge">Online agora</span>
+
+<h2>Chatbot JavaScript</h2>
+
+<p>Assistente de estudos para HTML, CSS e JavaScript.</p>
+
+</div>
+
+<div class="header-orb" aria-hidden="true"></div>
+
+</header>
+
+<section class="chat-suggestions" aria-label="Sugestoes rapidas">
+
+<button type="button" class="suggestion-chip" data-message="O que e HTML?">
+O que e HTML?
+</button>
+
+<button type="button" class="suggestion-chip" data-message="Explique CSS">
+Explique CSS
+</button>
+
+<button type="button" class="suggestion-chip" data-message="O que faz o JavaScript?">
+JavaScript
+</button>
+
+</section>
+
+<section
+id="chat"
+class="chat-feed"
+aria-live="polite"
+aria-label="Mensagens da conversa"
+></section>
+
+<form class="input-area" id="chat-form">
+
+<label class="sr-only" for="input">Digite sua mensagem</label>
+
+<input
+type="text"
+id="input"
+name="message"
+placeholder="Pergunte alguma coisa..."
+autocomplete="off"
+>
+
+<button type="submit" id="send-button" aria-label="Enviar mensagem">
+Enviar
+</button>
+
+</form>
+
+</main>
+
+</div>
+
+<script src="./script.js"></script>
+
+</body>
+</html>
