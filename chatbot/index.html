@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Chatbot JavaScript</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
@@ -33,7 +36,7 @@ rel="stylesheet"
 
 <p>
 Um chatbot com atmosfera futurista, interface em camadas e foco em leitura,
-contraste e microinteracoes.
+contraste e microinterações.
 </p>
 
 <div class="hero-metrics">
@@ -61,7 +64,8 @@ contraste e microinteracoes.
 
 <header class="chat-header">
 
-<img src="./img/robot.png" alt="Robô do chatbot">
+<img src="./img/robot.png" alt="Robô chatbot">
+
 <div>
 
 <span class="badge">Online agora</span>
@@ -72,21 +76,21 @@ contraste e microinteracoes.
 
 </div>
 
-<div class="header-orb" aria-hidden="true"></div>
+<div class="header-orb"></div>
 
 </header>
 
-<section class="chat-suggestions" aria-label="Sugestoes rapidas">
+<section class="chat-suggestions">
 
-<button type="button" class="suggestion-chip" data-message="O que e HTML?">
-O que e HTML?
+<button class="suggestion-chip" data-message="O que é HTML?">
+O que é HTML?
 </button>
 
-<button type="button" class="suggestion-chip" data-message="Explique CSS">
+<button class="suggestion-chip" data-message="Explique CSS">
 Explique CSS
 </button>
 
-<button type="button" class="suggestion-chip" data-message="O que faz o JavaScript?">
+<button class="suggestion-chip" data-message="O que faz o JavaScript?">
 JavaScript
 </button>
 
@@ -96,22 +100,18 @@ JavaScript
 id="chat"
 class="chat-feed"
 aria-live="polite"
-aria-label="Mensagens da conversa"
 ></section>
 
 <form class="input-area" id="chat-form">
 
-<label class="sr-only" for="input">Digite sua mensagem</label>
-
 <input
 type="text"
 id="input"
-name="message"
 placeholder="Pergunte alguma coisa..."
 autocomplete="off"
 >
 
-<button type="submit" id="send-button" aria-label="Enviar mensagem">
+<button type="submit" id="send-button">
 Enviar
 </button>
 
@@ -124,4 +124,5 @@ Enviar
 <script src="./script.js"></script>
 
 </body>
+
 </html>
