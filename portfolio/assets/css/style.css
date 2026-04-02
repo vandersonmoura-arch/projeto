@@ -507,6 +507,14 @@ main,
         gap: 24px;
     }
 
+    .hero-visual {
+        order: -1;
+    }
+
+    .hero-copy {
+        order: 1;
+    }
+
     .hero-copy {
         max-width: none;
     }
