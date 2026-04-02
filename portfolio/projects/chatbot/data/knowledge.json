@@ -1,7 +1,7 @@
-{
+﻿{
   "respostas": [
     {
-      "keywords": ["quem é voce", "quem é você", "quem é vc"],
+      "keywords": ["quem e voce", "quem é você", "quem é voce", "quem é vc", "quem e vc"],
       "answer": "Sou um robô criado para ajudar a apresentar os projetos do portfólio."
     },
     {
@@ -10,8 +10,13 @@
       "options": ["Projetos", "Orçamento"]
     },
     {
-      "keywords": ["projeto", "projetos", "trabalho", "portfolio"],
+      "keywords": ["projeto", "projetos", "trabalho", "portfolio", "portfólio"],
       "answer": "Os principais projetos são Movie Finder e o Chatbot interativo."
+    },
+    {
+      "keywords": ["o que voce faz", "o que você faz", "como funciona"],
+      "answer": "Eu respondo perguntas rápidas sobre o portfólio e os projetos disponíveis.",
+      "options": ["Projetos", "Orçamento"]
     },
     {
       "keywords": ["orçamento", "orcamento", "preço", "valor", "custo", "quanto custa"],

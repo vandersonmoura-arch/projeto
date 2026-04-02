@@ -1,0 +1,8 @@
+﻿{
+  "name": "portfolio-vanderson",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}

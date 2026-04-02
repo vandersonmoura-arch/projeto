@@ -1,73 +1,36 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Movie Finder</title>
-
 <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
-
 <header>
-
 <h1>🎬 Movie Finder</h1>
-
 <p>Busque filmes e salve favoritos</p>
-
-<img src="img/robot.png">
-
+<img src="img/movie-grid.png" alt="Banner visual do projeto Movie Finder">
 </header>
-
 <section class="search">
-
-<input
-type="text"
-id="searchInput"
-placeholder="Digite um filme..."
->
-
-<input
-type="number"
-id="yearFilter"
-placeholder="Ano"
->
-
+<input type="text" id="searchInput" placeholder="Digite um filme...">
+<input type="number" id="yearFilter" placeholder="Ano">
 <button id="searchBtn">Buscar</button>
-
 </section>
-
 <section class="favoritos">
-
 <h2>⭐ Favoritos</h2>
-
 <div id="favoritosLista" class="movies"></div>
-
 </section>
-
 <section>
-
 <h2>Resultados</h2>
-
 <div id="resultados" class="movies"></div>
-
 <div class="pagination">
-
 <button id="prevPage">⬅</button>
 <span id="pageInfo"></span>
 <button id="nextPage">➡</button>
-
 </div>
-
 </section>
-
 <div id="detalhes" class="detalhes hidden"></div>
-
 <script src="js/script.js"></script>
 </body>
 </html>

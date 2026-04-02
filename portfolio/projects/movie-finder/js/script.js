@@ -1,4 +1,4 @@
-const apiKey = "thewdb"
+﻿const apiKey = "thewdb"
 
 const input = document.getElementById("searchInput")
 const yearFilter = document.getElementById("yearFilter")
@@ -13,7 +13,6 @@ const nextPage = document.getElementById("nextPage")
 const pageInfo = document.getElementById("pageInfo")
 
 let paginaAtual = 1
-let buscaAtual = ""
 
 button.addEventListener("click", ()=>{
 paginaAtual = 1
@@ -21,224 +20,184 @@ buscarFilme()
 })
 
 input.addEventListener("keypress", e=>{
-if(e.key==="Enter"){
-paginaAtual=1
+if(e.key === "Enter"){
+paginaAtual = 1
 buscarFilme()
 }
 })
 
-prevPage.onclick=()=>{
-if(paginaAtual>1){
+prevPage.onclick = ()=>{
+if(paginaAtual > 1){
 paginaAtual--
 buscarFilme()
 }
 }
 
-nextPage.onclick=()=>{
+nextPage.onclick = ()=>{
 paginaAtual++
 buscarFilme()
 }
 
 function debounce(fn, delay){
-
 let timer
 
 return (...args)=>{
-
 clearTimeout(timer)
-
-timer=setTimeout(()=>{
+timer = setTimeout(()=>{
 fn(...args)
-},delay)
-
+}, delay)
 }
-
 }
 
 input.addEventListener("input", debounce(()=>{
-paginaAtual=1
+paginaAtual = 1
 buscarFilme()
-},600))
+}, 600))
 
 function getFavoritos(){
 return JSON.parse(localStorage.getItem("favoritos")) || []
 }
 
 function salvarFavoritos(lista){
-localStorage.setItem("favoritos",JSON.stringify(lista))
+localStorage.setItem("favoritos", JSON.stringify(lista))
+}
+
+function getPosterUrl(filme){
+return filme.Poster && filme.Poster !== "N/A" ? filme.Poster : "img/movie-grid.png"
 }
 
 function toggleFavorito(filme){
-
-let favoritos=getFavoritos()
-
-const existe=favoritos.find(f=>f.imdbID===filme.imdbID)
+let favoritos = getFavoritos()
+const existe = favoritos.find(f => f.imdbID === filme.imdbID)
 
 if(existe){
-
-favoritos=favoritos.filter(f=>f.imdbID!==filme.imdbID)
-
+favoritos = favoritos.filter(f => f.imdbID !== filme.imdbID)
 }else{
-
 favoritos.push(filme)
-
 }
 
 salvarFavoritos(favoritos)
-
 renderFavoritos()
-
 }
 
 function renderFavoritos(){
-
-const favoritos=getFavoritos()
-
-favoritosLista.innerHTML=""
+const favoritos = getFavoritos()
+favoritosLista.innerHTML = ""
 
 favoritos.forEach(filme=>{
-
-const card=document.createElement("div")
-
+const card = document.createElement("div")
 card.classList.add("movie")
-
-card.innerHTML=`
-<img src="${filme.Poster}">
+card.innerHTML = `
+<img src="${getPosterUrl(filme)}" alt="Poster de ${filme.Title}">
 <h3>${filme.Title}</h3>
 <p>${filme.Year}</p>
-<button>Remover</button>
+<button type="button">Remover</button>
 `
 
-card.querySelector("button").onclick=()=>toggleFavorito(filme)
+card.querySelector("button").onclick = (e)=>{
+e.stopPropagation()
+toggleFavorito(filme)
+}
 
-card.onclick=()=>mostrarDetalhes(filme.imdbID)
-
+card.onclick = ()=>mostrarDetalhes(filme.imdbID)
 favoritosLista.appendChild(card)
-
 })
-
 }
 
 async function buscarFilme(){
-
-const nome=input.value
+const nome = input.value.trim()
 
 if(!nome){
-resultados.innerHTML="Digite algo para buscar"
+resultados.innerHTML = "Digite algo para buscar"
+pageInfo.textContent = ""
 return
 }
 
-buscaAtual=nome
+resultados.innerHTML = "Buscando..."
 
-resultados.innerHTML="Buscando..."
-
-const ano=yearFilter.value
-
-let url=`https://www.omdbapi.com/?s=${nome}&page=${paginaAtual}&apikey=${apiKey}`
+const ano = yearFilter.value.trim()
+let url = `https://www.omdbapi.com/?s=${encodeURIComponent(nome)}&page=${paginaAtual}&apikey=${apiKey}`
 
 if(ano){
-url+=`&y=${ano}`
+url += `&y=${encodeURIComponent(ano)}`
 }
 
 try{
-
-const resposta=await fetch(url)
-
-const dados=await resposta.json()
+const resposta = await fetch(url)
+const dados = await resposta.json()
 
 if(!dados.Search){
-
-resultados.innerHTML="Nenhum resultado encontrado"
-
+resultados.innerHTML = "Nenhum resultado encontrado"
+pageInfo.textContent = ""
 return
-
 }
 
 renderFilmes(dados.Search)
-
-pageInfo.textContent=`Página ${paginaAtual}`
-
+pageInfo.textContent = `Página ${paginaAtual}`
 }catch(error){
-
-resultados.innerHTML="Erro ao buscar filmes"
-
+resultados.innerHTML = "Erro ao buscar filmes"
+pageInfo.textContent = ""
 }
-
 }
 
 function renderFilmes(lista){
-
-resultados.innerHTML=""
+resultados.innerHTML = ""
 
 lista.forEach(filme=>{
-
-const card=document.createElement("div")
-
+const card = document.createElement("div")
 card.classList.add("movie")
-
-card.innerHTML=`
-<img src="${filme.Poster}">
+card.innerHTML = `
+<img src="${getPosterUrl(filme)}" alt="Poster de ${filme.Title}">
 <h3>${filme.Title}</h3>
 <p>${filme.Year}</p>
-<button>⭐ Favoritar</button>
+<button type="button">⭐ Favoritar</button>
 `
 
-card.querySelector("button").onclick=(e)=>{
-
+card.querySelector("button").onclick = (e)=>{
 e.stopPropagation()
-
 toggleFavorito(filme)
-
 }
 
-card.onclick=()=>mostrarDetalhes(filme.imdbID)
-
+card.onclick = ()=>mostrarDetalhes(filme.imdbID)
 resultados.appendChild(card)
-
 })
-
 }
 
 async function mostrarDetalhes(id){
+const url = `https://www.omdbapi.com/?i=${id}&apikey=${apiKey}`
 
-const url=`https://www.omdbapi.com/?i=${id}&apikey=${apiKey}`
+try{
+const resposta = await fetch(url)
+const filme = await resposta.json()
 
-const resposta=await fetch(url)
-
-const filme=await resposta.json()
-
-detalhes.innerHTML=`
-
+detalhes.innerHTML = `
 <div class="detalhes-content">
-
 <h2>${filme.Title}</h2>
-
-<img src="${filme.Poster}" style="width:200px">
-
+<img src="${getPosterUrl(filme)}" alt="Poster de ${filme.Title}" style="width:200px">
 <p><b>Ano:</b> ${filme.Year}</p>
-
 <p><b>Gênero:</b> ${filme.Genre}</p>
-
 <p><b>Diretor:</b> ${filme.Director}</p>
-
 <p><b>IMDB:</b> ${filme.imdbRating}</p>
-
 <p>${filme.Plot}</p>
-
-<button onclick="fecharDetalhes()">Fechar</button>
-
+<button type="button" onclick="fecharDetalhes()">Fechar</button>
 </div>
-
 `
 
 detalhes.classList.remove("hidden")
+}catch(error){
+detalhes.innerHTML = `
+<div class="detalhes-content">
+<h2>Não foi possível carregar os detalhes</h2>
+<button type="button" onclick="fecharDetalhes()">Fechar</button>
+</div>
+`
 
+detalhes.classList.remove("hidden")
+}
 }
 
 function fecharDetalhes(){
-
 detalhes.classList.add("hidden")
-
 }
 
 renderFavoritos()
